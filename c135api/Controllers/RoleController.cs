@@ -58,17 +58,5 @@ namespace c135api.Controllers
             return Ok();
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete([FromRoute] int id) 
-        {
-         
-            Role entity = _ctx.Roles.Find(id);
-         
-            entity.IsDeleted = true;
-            _ctx.SaveChanges();
-
-            return Ok();
-        }
-
     }
 }
